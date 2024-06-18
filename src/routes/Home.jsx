@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const [data, setData] = useState({});
   const [lastRowLength, setLastRowLength] = useState(0); //new
-  const navigate = useNavigate();
+  const navigate = useNavigat();
 
   useEffect(() => {
     const fetchData = async () => {
