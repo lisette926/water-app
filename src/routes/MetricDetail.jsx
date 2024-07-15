@@ -26,7 +26,10 @@ const MetricDetail = () => {
         const metricKey = METRICS_MAP[metricName]; //new
         const metricValues = data
           .map((row) => parseFloat(row[metricKey]))
-          .filter((val) => !isNaN(val) && val !== null && val !== undefined);
+          .filter(
+            (val) =>
+              !isNaN(val) && val !== null && val !== undefined && val !== 0,
+          );
 
         // Compute current, average, highest, and lowest values
         const avg = (

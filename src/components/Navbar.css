@@ -1,0 +1,71 @@
+.navbar {
+  background-color: #4ac5e0;
+  display: flex;
+  height: 80px;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.menu-icon,
+.close-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-menu {
+  background-color: #4ac5e0;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+}
+
+.nav-menu.active {
+  left: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.nav-menu-items {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu-items li {
+  padding: 10px;
+  color: white;
+}
+
+.nav-menu-items li a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-menu-items li a:hover {
+  background-color: #1a83ff;
+}
+
+.quality-banner {
+  width: 95%;
+  padding: 10px;
+  margin-left: 1%;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}

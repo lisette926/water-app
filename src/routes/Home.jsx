@@ -51,7 +51,6 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Header />
-      <QualityBanner />
       <Metrics data={data} onMetricClick={handleMetricClick} />
       <Footer />
     </div>
@@ -63,7 +62,7 @@ const Header = () => {
 };
 
 const QualityBanner = () => {
-  return <div className="quality-banner">Water Quality: Very Good</div>;
+  return <div className="quality-banner">Water Quality Data</div>;
 };
 
 const Metrics = ({ data, onMetricClick }) => {
