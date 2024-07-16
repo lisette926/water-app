@@ -69,3 +69,8 @@
   font-size: 25px;
   font-family: "Lucida Console", "Courier New", monospace;
 }
+
+.timestamp {
+  font-size: 15px;
+  color: black;
+}

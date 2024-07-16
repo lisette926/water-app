@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import menuBar from "../assets/munu-bar.png";
 import closeIcon from "../assets/icon-close.png";
@@ -10,10 +10,45 @@ function Navbar() {
 
   const showSidebar = () => setSidebar(true);
   const hideSidebar = () => setSidebar(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
-  const QualityBanner = () => {
-    return <div className="quality-banner">Water Quality Data</div>;
-  };
+  //get timestamp data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://smart-seawall-server-4c5cb6fd8f61.herokuapp.com/api/data",
+        );
+        const data = await response.json();
+        console.log("Fetched data:", data);
+        if (data && data.length > 0) {
+          const mostRecentData = data[data.length - 1];
+          setLastUpdated(mostRecentData);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    const intervalID = setInterval(fetchData, 15000); //15 second intervals
+  }, []);
+
+  //banner
+  const QualityBanner = () => (
+    <div className="quality-banner">
+      Water Quality Data
+      {lastUpdated ? (
+        <div className="timestamp">
+          Data last updated: {lastUpdated.Month} {lastUpdated.Day},{" "}
+          {lastUpdated.Year} at {lastUpdated.Hour}:{lastUpdated.Minute}:
+          {lastUpdated.Second}
+        </div>
+      ) : (
+        <div>Loading data...</div>
+      )}
+    </div>
+  );
 
   return (
     <>
