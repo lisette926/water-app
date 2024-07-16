@@ -1,0 +1,37 @@
+.schedule-wake-up {
+  padding: 20px;
+}
+
+.schedule-wake-up h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.schedule-wake-up p {
+  margin-bottom: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.schedule-wake-up form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.schedule-wake-up label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.schedule-wake-up select {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.schedule-wake-up button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}

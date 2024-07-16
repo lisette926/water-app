@@ -40,7 +40,7 @@ function Navbar() {
       Water Quality Data
       {lastUpdated ? (
         <div className="timestamp">
-          Data last updated: {lastUpdated.Month} {lastUpdated.Day},{" "}
+          Data last collected: {lastUpdated.Month} {lastUpdated.Day},{" "}
           {lastUpdated.Year} at {lastUpdated.Hour}:{lastUpdated.Minute}:
           {lastUpdated.Second}
         </div>
